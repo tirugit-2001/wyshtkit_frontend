@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 
-import WyshkitLogo from "../../shared/logo/WyshkitLogo";
 import {
   ClipsIcon,
   FeedIcon,
@@ -26,8 +25,11 @@ const Sidebar = () => {
   return (
     <aside className={styles.sidebar}>
       <div className={styles.logo}>
-        <WyshkitLogo />
-        <span className={styles.logoText}>Wyshkit</span>
+        <img
+          alt="Wyshkit Logo"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM3JB0meUvqdq5xjFYlxr7CjSKJMW_f0QoFmCjgOgO57EOp56Cr8TCCE5ZZmJWV2fbGDzx2Vj7hNx_fEMV5jyUkmuCKc18x1wfdYNaXorV6yfNeAfxyK19yw1tv0FbJULvXeym4f54bXBsgbhfXO_MRoGmM_EQj7X90y286_NpZNo43VVtstzlSp46xLfhPG8HodwpZkK7Qf62Fo5t_qf83cHHTbMkk68HGGBou5kmzLMxSqsg5iL0gdRMWvpO--wmoWMiQv4n5ls6"
+          style={{ width: "160px", height: "40px", objectFit: "contain" }}
+        />
       </div>
 
       <nav className={styles.nav}>
