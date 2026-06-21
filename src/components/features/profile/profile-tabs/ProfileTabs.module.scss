@@ -1,0 +1,33 @@
+@use "../../../../styles/profile" as profile;
+
+.tabs {
+  display: flex;
+  gap: 0;
+  overflow-x: auto;
+  border-bottom: 1px solid rgba(profile.$feed-outline-variant, 0.3);
+  @include profile.hide-scrollbar;
+}
+
+.tab {
+  flex-shrink: 0;
+  padding: 16px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  color: profile.$feed-on-surface-variant;
+  white-space: nowrap;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+
+  &:hover {
+    color: profile.$feed-on-surface;
+  }
+}
+
+.tabActive {
+  color: profile.$feed-on-surface;
+  border-bottom-color: profile.$feed-on-surface;
+}

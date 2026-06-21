@@ -1,0 +1,23 @@
+@use "../../styles/profile" as profile;
+
+.profile {
+  width: 100%;
+  max-width: profile.$profile-max-width;
+  height: 100%;
+  margin: 0 auto;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.menuContent {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.placeholder {
+  font-size: 16px;
+  color: profile.$feed-on-surface-variant;
+}

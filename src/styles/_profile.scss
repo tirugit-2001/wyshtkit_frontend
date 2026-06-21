@@ -1,0 +1,21 @@
+@forward "feed";
+
+$profile-max-width: 1200px;
+$profile-radius-cover: 28px;
+$profile-radius-card: 20px;
+
+@mixin hide-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin ambient-shadow-1 {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+@mixin ambient-shadow-2 {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+}

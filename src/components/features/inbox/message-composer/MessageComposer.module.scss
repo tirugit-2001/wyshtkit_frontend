@@ -1,0 +1,81 @@
+@use "../../../../styles/inbox" as inbox;
+
+.footer {
+  flex-shrink: 0;
+  padding: 24px;
+  background: white;
+  border-top: 1px solid rgba(inbox.$feed-outline-variant, 0.3);
+}
+
+.composer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  max-width: 672px;
+  height: 56px;
+  margin: 0 auto;
+  padding: 8px 16px;
+  background: inbox.$feed-surface-container-low;
+  border: 1px solid rgba(inbox.$feed-outline-variant, 0.3);
+  border-radius: inbox.$feed-radius-pill;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: border-color 0.15s ease, background 0.15s ease;
+
+  &:focus-within {
+    background: white;
+    border-color: rgba(inbox.$feed-accent-pink, 0.5);
+  }
+}
+
+.attachBtn {
+  display: flex;
+  padding: 4px;
+  color: inbox.$feed-on-surface-variant;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    color: inbox.$feed-on-surface;
+  }
+}
+
+.input {
+  flex: 1;
+  min-width: 0;
+  padding: 8px 0;
+  font-size: 16px;
+  font-family: inherit;
+  color: inbox.$feed-on-surface;
+  background: transparent;
+  border: none;
+  outline: none;
+
+  &::placeholder {
+    color: inbox.$feed-on-surface-variant;
+  }
+}
+
+.sendBtn {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  color: white;
+  background: inbox.$feed-accent-pink;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.9;
+  }
+
+  &:active {
+    transform: translate(2px, 2px);
+  }
+}

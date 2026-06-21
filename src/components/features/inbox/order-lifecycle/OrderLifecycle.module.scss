@@ -1,0 +1,67 @@
+@use "../../../../styles/inbox" as inbox;
+
+.track {
+  display: flex;
+  gap: 8px;
+  padding: 16px 16px 8px;
+}
+
+.step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bar {
+  height: 4px;
+  border-radius: inbox.$feed-radius-pill;
+}
+
+.bar_complete {
+  background: inbox.$feed-delivery-teal;
+}
+
+.bar_active {
+  position: relative;
+  overflow: hidden;
+  background: inbox.$feed-accent-pink;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.3);
+    animation: pulse 1.5s ease infinite;
+  }
+}
+
+.bar_pending {
+  background: inbox.$feed-surface-container-high;
+}
+
+.label {
+  width: 100%;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.label_complete {
+  color: inbox.$feed-delivery-teal;
+}
+
+.label_active {
+  color: inbox.$feed-accent-pink;
+}
+
+.label_pending {
+  color: inbox.$feed-on-surface-variant;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.4;
+  }
+}

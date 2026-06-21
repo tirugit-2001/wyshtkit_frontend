@@ -1,0 +1,153 @@
+@use "../../../../styles/feed" as feed;
+
+.player {
+  position: relative;
+  height: 90vh;
+  max-height: calc(100vh - 120px);
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  background: black;
+  border-radius: feed.$feed-radius-pill;
+  box-shadow: feed.$feed-shadow-ambient-2;
+}
+
+.poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent, transparent, rgba(0, 0, 0, 0.6));
+  pointer-events: none;
+}
+
+.overlay {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  color: white;
+}
+
+.userRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.avatarWrap {
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.username {
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+}
+
+.dot {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.followBtn {
+  padding: 0;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.15s ease;
+
+  &:hover {
+    color: feed.$feed-accent-pink;
+  }
+}
+
+.caption {
+  display: -webkit-box;
+  overflow: hidden;
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-bottom: 8px;
+}
+
+.audio {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  border-radius: feed.$feed-radius-pill;
+}
+
+.spinIcon {
+  animation: spin-slow 4s linear infinite;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.shopBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px 24px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  color: white;
+  background: feed.$feed-accent-pink;
+  border: none;
+  border-radius: feed.$feed-radius-pill;
+  box-shadow: 0 10px 25px rgba(236, 132, 154, 0.35);
+  cursor: pointer;
+  transition: transform 0.15s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}

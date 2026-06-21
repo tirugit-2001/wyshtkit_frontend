@@ -1,0 +1,165 @@
+@use "../../../../styles/profile" as profile;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: profile.$feed-surface-bright;
+  border-radius: profile.$profile-radius-card;
+  cursor: pointer;
+  @include profile.ambient-shadow-1;
+  transition: box-shadow 0.2s ease;
+
+  &:hover {
+    @include profile.ambient-shadow-2;
+
+    .image {
+      transform: scale(1.05);
+    }
+
+    .manageOverlay {
+      opacity: 1;
+    }
+  }
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.analytics {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  left: 8px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 8px;
+  font-size: 10px;
+  font-weight: 700;
+  color: white;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+
+  span {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+}
+
+.manageOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.manageActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  width: 100%;
+}
+
+.editBtn,
+.hideBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 8px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  border: none;
+  border-radius: profile.$feed-radius-pill;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.editBtn {
+  color: profile.$feed-on-surface;
+  background: white;
+
+  &:hover {
+    background: profile.$feed-surface-container-low;
+  }
+}
+
+.hideBtn {
+  color: profile.$feed-on-surface;
+  background: profile.$feed-surface-container-high;
+
+  &:hover {
+    background: rgba(profile.$feed-outline-variant, 0.3);
+  }
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px;
+  background: profile.$feed-surface-bright;
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  color: profile.$feed-on-surface;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.price {
+  font-size: 14px;
+  font-weight: 700;
+  color: profile.$feed-on-surface;
+}
+
+.addBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: profile.$feed-on-surface;
+  background: profile.$feed-surface-container-low;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+
+  &:hover {
+    color: white;
+    background: profile.$feed-on-surface;
+  }
+}

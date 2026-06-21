@@ -1,0 +1,22 @@
+@use "../../styles/variables" as *;
+
+.parent {
+  min-height: 100vh;
+  background: $color-white;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin-left: $sidebar-width;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.content {
+  flex: 1;
+  min-height: 0;
+  padding: 24px 32px 48px;
+  overflow: hidden;
+}

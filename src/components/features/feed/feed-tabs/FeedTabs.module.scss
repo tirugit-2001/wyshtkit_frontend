@@ -1,0 +1,58 @@
+@use "../../../../styles/feed" as feed;
+
+.wrap {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 32px;
+}
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  background: rgba(feed.$feed-surface-container-low, 0.5);
+  border: 1px solid rgba(feed.$feed-outline-variant, 0.1);
+  border-radius: feed.$feed-radius-pill;
+}
+
+.tab {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 10px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  color: feed.$feed-on-surface-variant;
+  background: transparent;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover:not(.tabActive) {
+    background: rgba(255, 255, 255, 0.5);
+  }
+}
+
+.tabActive {
+  color: feed.$feed-on-surface;
+  background: white;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.pink {
+  background: feed.$feed-accent-pink;
+}
+
+.cyan {
+  background: feed.$feed-delivery-cyan;
+}

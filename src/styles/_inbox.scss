@@ -1,0 +1,32 @@
+@forward "feed";
+
+$inbox-shell-max-width: 1440px;
+$inbox-list-width: 360px;
+
+@mixin hide-scrollbar {
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@mixin ambient-shadow-1 {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+}
+
+@mixin ambient-shadow-2 {
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+}
+
+@mixin pulse-dot {
+  animation: inbox-pulse 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes inbox-pulse {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}

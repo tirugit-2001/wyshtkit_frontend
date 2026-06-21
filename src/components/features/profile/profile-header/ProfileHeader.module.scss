@@ -1,0 +1,233 @@
+@use "../../../../styles/profile" as profile;
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.cover {
+  position: relative;
+  width: 100%;
+  height: 192px;
+  padding: 0;
+  overflow: hidden;
+  background: none;
+  border: none;
+  border-radius: profile.$profile-radius-cover;
+  cursor: pointer;
+
+  @include profile.ambient-shadow-1;
+
+  @media (min-width: 768px) {
+    height: 256px;
+  }
+
+  &:hover .coverOverlay {
+    opacity: 1;
+  }
+}
+
+.coverImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.coverOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.changeBanner {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  color: profile.$feed-on-surface;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border-radius: profile.$feed-radius-pill;
+}
+
+.infoArea {
+  position: relative;
+  z-index: 1;
+  padding: 0 16px;
+  margin-top: -64px;
+}
+
+.topRow {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.avatarBtn {
+  position: relative;
+  flex-shrink: 0;
+  width: 112px;
+  height: 112px;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  &:hover .avatarOverlay {
+    opacity: 1;
+  }
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: white;
+  border: 4px solid white;
+  border-radius: 50%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.avatarOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.actionBtn,
+.manageBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: inherit;
+  color: profile.$feed-on-surface;
+  background: profile.$feed-surface-container-low;
+  border: none;
+  border-radius: profile.$feed-radius-pill;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: profile.$feed-surface-container-high;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.manageBtn {
+  gap: 8px;
+  border: 1px solid rgba(profile.$feed-outline-variant, 0.2);
+}
+
+.toggle {
+  position: relative;
+  width: 40px;
+  height: 24px;
+  background: rgba(profile.$feed-outline-variant, 0.3);
+  border-radius: profile.$feed-radius-pill;
+  transition: background 0.3s ease;
+}
+
+.toggleOn {
+  background: profile.$feed-accent-pink;
+}
+
+.toggleThumb {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+
+  .toggleOn & {
+    transform: translateX(16px);
+  }
+}
+
+.details {
+  margin-top: 16px;
+}
+
+.name {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: profile.$feed-on-surface;
+}
+
+.bio {
+  margin-top: 4px;
+  font-size: 16px;
+  line-height: 1.5;
+  color: profile.$feed-on-surface-variant;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.stat {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  color: profile.$feed-on-surface;
+}
+
+.starIcon {
+  color: profile.$feed-accent-pink;
+}
+
+.deliveryTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  font-size: 12px;
+  font-weight: 700;
+  color: profile.$feed-delivery-teal;
+  background: rgba(profile.$feed-delivery-teal, 0.1);
+  border-radius: profile.$feed-radius-pill;
+}

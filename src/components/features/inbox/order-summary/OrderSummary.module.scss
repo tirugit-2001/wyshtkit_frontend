@@ -1,0 +1,100 @@
+@use "../../../../styles/inbox" as inbox;
+
+.card {
+  display: block;
+  width: 100%;
+  max-width: 672px;
+  margin: 0 auto 8px;
+  padding: 24px;
+  font-family: inherit;
+  text-align: left;
+  background: white;
+  border: 1px solid rgba(inbox.$feed-outline-variant, 0.3);
+  border-radius: inbox.$feed-radius-pill;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  @include inbox.ambient-shadow-1;
+
+  &:hover {
+    border-color: rgba(inbox.$feed-accent-pink, 0.3);
+    @include inbox.ambient-shadow-2;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: inbox.$feed-on-surface-variant;
+}
+
+.total {
+  font-size: 14px;
+  font-weight: 700;
+  color: inbox.$feed-on-surface;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.item {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.thumb,
+.iconThumb {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  border: 1px solid rgba(inbox.$feed-outline-variant, 0.2);
+}
+
+.thumb {
+  object-fit: cover;
+}
+
+.iconThumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inbox.$feed-on-surface-variant;
+  background: inbox.$feed-surface-container-high;
+}
+
+.itemBody {
+  flex: 1;
+}
+
+.itemName {
+  font-size: 16px;
+  font-weight: 700;
+  color: inbox.$feed-on-surface;
+}
+
+.itemStatus {
+  margin-top: 4px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.status_pink {
+  color: inbox.$feed-accent-pink;
+}
+
+.status_teal {
+  color: inbox.$feed-delivery-teal;
+}

@@ -1,0 +1,28 @@
+// Luminous / Stitch feed design tokens
+$feed-accent-pink: #ec849a;
+$feed-delivery-teal: #006a67;
+$feed-delivery-cyan: #2ff8f2;
+$feed-surface-bright: #f9f9f9;
+$feed-surface-container-low: #f3f3f3;
+$feed-surface-container-high: #e8e8e8;
+$feed-on-surface: #1b1b1b;
+$feed-on-surface-variant: #4c4546;
+$feed-outline-variant: #cfc4c5;
+$feed-shadow-ambient-1: 0 8px 24px rgba(0, 0, 0, 0.04);
+$feed-shadow-ambient-2: 0 16px 48px rgba(0, 0, 0, 0.08);
+$feed-radius-pill: 20px;
+$feed-radius-card: 24px;
+
+@mixin glass-panel {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+}
+
+@mixin story-ring {
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(45deg, #ec849a, #ffb1bf, #ec849a) border-box;
+  border: 2.5px solid transparent;
+}

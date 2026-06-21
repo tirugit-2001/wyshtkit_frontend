@@ -1,0 +1,65 @@
+@use "../../../../styles/profile" as profile;
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+}
+
+.heading {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+  color: profile.$feed-on-surface;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+
+  @media (min-width: 1024px) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.createTile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 4 / 3;
+  padding: 0;
+  background: rgba(profile.$feed-accent-pink, 0.05);
+  border: 2px dashed rgba(profile.$feed-accent-pink, 0.3);
+  border-radius: profile.$profile-radius-card;
+  cursor: pointer;
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: rgba(profile.$feed-accent-pink, 0.1);
+
+    .createIcon {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.createIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  color: white;
+  background: profile.$feed-accent-pink;
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba(profile.$feed-accent-pink, 0.35);
+  transition: transform 0.15s ease;
+}

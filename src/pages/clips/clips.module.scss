@@ -1,0 +1,27 @@
+.clips {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin: -24px -32px -48px;
+  overflow: hidden;
+  background: white;
+}
+
+.stage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+}
+
+@media (max-width: 900px) {
+  .clips {
+    margin: 0;
+  }
+
+  .stage {
+    padding: 0 16px;
+  }
+}

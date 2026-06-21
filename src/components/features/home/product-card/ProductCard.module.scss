@@ -1,0 +1,127 @@
+@use "../../../../styles/variables" as *;
+
+.card {
+  flex-shrink: 0;
+  width: 200px;
+}
+
+.cardLarge {
+  width: 240px;
+}
+
+.image {
+  position: relative;
+  aspect-ratio: 1;
+  border-radius: $radius-md;
+  overflow: hidden;
+}
+
+.deliveryBadge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 4px 8px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: $color-white;
+  background: $color-primary;
+  border-radius: $radius-pill;
+}
+
+.todayBadge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 10px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: $color-text-muted;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: $radius-pill;
+}
+
+.ratingBadge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 4px 8px;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: $color-text;
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: $radius-pill;
+}
+
+.body {
+  padding: 10px 2px 0;
+}
+
+.category {
+  display: block;
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: $color-text-light;
+  margin-bottom: 2px;
+}
+
+.title {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: $color-text;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.statusWarning {
+  color: $color-primary;
+}
+
+.statusSuccess {
+  color: $color-success;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price {
+  font-size: 1rem;
+  font-weight: 700;
+  color: $color-text;
+}
+
+.addBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: $color-white;
+  background: $color-black;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+
+  &:hover {
+    opacity: 0.85;
+  }
+}

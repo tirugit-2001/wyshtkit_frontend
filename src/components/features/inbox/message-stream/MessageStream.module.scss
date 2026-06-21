@@ -1,0 +1,213 @@
+@use "../../../../styles/inbox" as inbox;
+
+.stream {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 40px;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 40px;
+  background: inbox.$feed-surface-bright;
+  @include inbox.hide-scrollbar;
+}
+
+.message {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 672px;
+  margin: 0 auto;
+}
+
+.iconAvatar,
+.avatarImage {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  margin-top: 24px;
+  border-radius: 50%;
+}
+
+.iconAvatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatarImage {
+  object-fit: cover;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.accent_secondary {
+  color: inbox.$feed-delivery-teal;
+  background: rgba(inbox.$feed-delivery-teal, 0.1);
+}
+
+.accent_teal {
+  color: inbox.$feed-delivery-teal;
+  background: rgba(inbox.$feed-delivery-teal, 0.1);
+}
+
+.accent_pink {
+  color: inbox.$feed-accent-pink;
+  background: rgba(inbox.$feed-accent-pink, 0.1);
+}
+
+.content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.time {
+  margin-left: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  color: inbox.$feed-on-surface-variant;
+}
+
+.bubble,
+.proofBubble {
+  width: 100%;
+  padding: 16px;
+  color: inbox.$feed-on-surface;
+  background: inbox.$feed-surface-container-low;
+  border: 1px solid rgba(inbox.$feed-outline-variant, 0.2);
+  border-radius: inbox.$feed-radius-pill;
+  border-top-left-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.bubble {
+  font-family: inherit;
+  text-align: left;
+}
+
+.bubbleOrder {
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+
+  &:hover {
+    border-color: rgba(inbox.$feed-accent-pink, 0.3);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  }
+}
+
+.bubbleMerchant {
+  background: white;
+  border-color: rgba(inbox.$feed-outline-variant, 0.3);
+  @include inbox.ambient-shadow-1;
+}
+
+.bubbleTitle {
+  margin-bottom: 4px;
+  font-weight: 700;
+  color: inbox.$feed-on-surface;
+}
+
+.bubbleBody {
+  font-size: 16px;
+  line-height: 1.5;
+
+  strong {
+    font-weight: 700;
+  }
+}
+
+.proofTitle {
+  margin-bottom: 16px;
+  font-size: 16px;
+  font-weight: 700;
+  color: inbox.$feed-on-surface;
+}
+
+.proofCard {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  background: white;
+  border: 1px solid rgba(inbox.$feed-outline-variant, 0.3);
+  border-radius: inbox.$feed-radius-pill;
+  @include inbox.ambient-shadow-1;
+}
+
+.proofImageWrap {
+  overflow: hidden;
+  background: inbox.$feed-surface-container-low;
+  border: 1px solid rgba(inbox.$feed-outline-variant, 0.2);
+  border-radius: 16px;
+}
+
+.proofImage {
+  display: block;
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.proofDescription {
+  font-size: 16px;
+  line-height: 1.5;
+  color: inbox.$feed-on-surface-variant;
+}
+
+.tweakBtn {
+  flex: 1;
+  padding: 16px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  color: inbox.$feed-on-surface;
+  background: white;
+  border: 1px solid inbox.$feed-outline-variant;
+  border-radius: inbox.$feed-radius-pill;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+
+  &:hover {
+    background: inbox.$feed-surface-container-high;
+  }
+}
+
+.approveBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 56px;
+  overflow: hidden;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  color: inbox.$feed-accent-pink;
+  background: rgba(inbox.$feed-accent-pink, 0.1);
+  border: 1px solid rgba(inbox.$feed-accent-pink, 0.3);
+  border-radius: inbox.$feed-radius-pill;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+
+  &:hover {
+    background: rgba(inbox.$feed-accent-pink, 0.2);
+  }
+
+  &:active::after {
+    transform: scaleY(1);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(inbox.$feed-accent-pink, 0.2);
+    transform: scaleY(0);
+    transform-origin: bottom;
+    transition: transform 1s ease-in-out;
+  }
+}

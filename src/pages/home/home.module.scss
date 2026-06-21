@@ -1,0 +1,25 @@
+@use "../../styles/home" as home;
+
+.home {
+  height: 100%;
+  margin: -24px -32px -48px;
+  padding: home.$home-page-padding;
+  overflow-y: auto;
+  background: white;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: home.$home-section-gap;
+  width: 100%;
+  max-width: home.$home-max-width;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .home {
+    margin: 0;
+    padding: 20px;
+  }
+}

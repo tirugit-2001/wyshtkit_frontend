@@ -1,0 +1,156 @@
+@use "../../../../styles/feed" as feed;
+
+.wrap {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto 32px;
+  flex-shrink: 0;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  overflow-x: auto;
+  padding: 8px 16px 16px;
+  border-bottom: 1px solid rgba(feed.$feed-outline-variant, 0.1);
+  scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent,
+    black 5%,
+    black 95%,
+    transparent
+  );
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.story {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  width: 72px;
+  padding: 0;
+  font-family: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.avatarWrap {
+  position: relative;
+}
+
+.ring {
+  border-radius: 50%;
+  padding: 2px;
+}
+
+.hasRing {
+  @include feed.story-ring;
+  padding: 2px;
+}
+
+.mutedRing {
+  padding: 2px;
+  margin-top: 2px;
+}
+
+.avatarImg {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+}
+
+.avatarMuted {
+  filter: grayscale(100%);
+  opacity: 0.2;
+  width: 66px;
+  height: 66px;
+  border: 1px solid rgba(feed.$feed-outline-variant, 0.3);
+}
+
+.initials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  font-size: 20px;
+  font-weight: 700;
+  color: feed.$feed-on-surface;
+  background: feed.$feed-surface-container-high;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.initialsFloral {
+  color: feed.$feed-delivery-teal;
+  background: rgba(feed.$feed-delivery-cyan, 0.2);
+}
+
+.addBadge {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  color: white;
+  background: feed.$feed-accent-pink;
+  border: 2px solid white;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.liveBadge {
+  position: absolute;
+  right: -2px;
+  bottom: 0;
+  z-index: 1;
+  padding: 2px 4px;
+  font-size: 8px;
+  font-weight: 700;
+  line-height: 1;
+  color: white;
+  background: #ba1a1a;
+  border: 2px solid white;
+  border-radius: 4px;
+}
+
+.label {
+  width: 100%;
+  font-size: 12px;
+  font-weight: 700;
+  color: feed.$feed-on-surface;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.labelMuted {
+  color: feed.$feed-on-surface-variant;
+}
